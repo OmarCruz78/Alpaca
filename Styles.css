@@ -2,42 +2,53 @@
     --zi-body: 10;
 --zi-legs:  9;
 --zi-bottom-legs: 8;
+--marron: #AC8147;
+--marron2:#6F4E37;
+--marron3:#97572B;
+--marron4:#6F4E37;  
+--cielo: #ADD8E6;
+--cielo2:#87CEFA ; 
+--white: #000000; 
+--black: #000009;
 }
 
 body{
-  background-color: #f6cf85;
+
   margin-top: 20px;
   display: flex;
   justify-content: center;
 
-  background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
+  background: linear-gradient(45deg, var(--marron), var(--marron2));
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow: hid den;
 }
 
 
 .left-mountain {
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(var(--marron), var(--marron2));
     position: absolute;
-    transform: skew(0deg, 44deg);
-    z-index: -2;
+    /*transform: skew(0deg, 44deg);*/
+    transform: rotate(45deg);  
+    z-index: -2 ;
     margin-top: 100px;
+    border-radius:70px;
   }
   
   .back-mountain {
     width: 300px;
     height: 300px;
-    background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
+    background: linear-gradient(var(--marron3), var(--marron4));
     position: absolute;
-    z-index: -auto;
+    z-index: -1;
     transform: rotate(45deg);
     left: 110px;
     top: 225px;
+    border-radius:50px; 
   }
   
   .sun {
@@ -102,36 +113,37 @@ body{
         }  
     .eyes{
       position: absolute;
-      background-color: transparent;
+      background-color: var(--black);
       top: 35px;
-      left: -10px;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      border-top: 4px solid #6a6250;
+      left: 1.8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border-top: 4px solid var(--black);
     }  
     .eyes:after{    
         content: '';
+        background-color: var(--black);
         position: absolute;
         display: block;
         top: -4px;
-        right: -70px;
-        width: 20px;
-        height: 20px;
+        right: -55px;
+        width: 12px;
+        height: 12px;
         border-radius: 20px;
-        border-top: 4px solid #6a6250;
+        border-top: 4px solid var(--black);
     }
       .eyes:before{
         content: '';
         position: absolute;
         display: block;
-        top: 20px;
-        left: 7px;
+        top: 30px;
+        left: 1px;
         width: 10px;
         height: 5px;
         border-radius: 20px;
-        background-color: #fde19d;
-        box-shadow: 66px 0 0 #fde19d;
+        background-color: transparent;
+        box-shadow: 66px 0 0 transparent;
       }  
     .nose-container{
       position: relative;
@@ -162,7 +174,7 @@ body{
       }
     .nose{
       position: relative;
-      margin-top: 50px;
+      margin-top: 60px;
       background-color: #cacaca;
       width: 30px;
       height: 16px;
@@ -199,9 +211,9 @@ body{
     z-index: var(--zi-body);
     position: relative;
     width: 70px;
-    height: 100px;
+    height: 150px;
     background: white;
-    border-bottom-left-radius: 70px;
+    border-bottom-left-radius: 60px;
   }
     .neck:after{
       position: absolute;
@@ -217,12 +229,14 @@ body{
   .chest{
     z-index: var(--zi-body);
     position: relative;
-    width: 190px;
-    height: 100px;
+    margin-top:30px; 
+    width: 220px;
+    height: 120px;
     background: white;
     overflow: hidden;
     display: flex;
     justify-content: center;
+    border-radius: 0 10px 10px 0;
 }  
     .saddlebags{
       position: relative;
@@ -260,8 +274,8 @@ body{
 
   .tail{
     position: absolute;
-    left: 245px;
-    top: -15px;
+    left: 275px;
+    top: 15px;
     width: 30px;
     height: 30px;
     border-radius: 2px;
@@ -287,26 +301,28 @@ body{
 
   .legs-container{
     position: relative;
+    z-index:2; 
 }  
   .legs{
-    z-index: var(--zi-legs);
+    z-index: var(--zi-legs);    
     left: 75px;
     top: -10px;
     position: absolute;
     width: 50px;
-    height: 60px;
+    height: 90px;
     background-color: white;
-    border-bottom-left-radius: 70px;
-    box-shadow: -40px 0 #fbe8bc, 135px 0 #fff, 95px 0 #fbe8bc;
+    border-bottom-left-radius: 80px;
+    box-shadow: -40px 0 #fbe8bc, 160px 0 #fff, 120px 0 #fbe8bc;
+    border-bottom-right-radius: 10px;
 }
   .bottom-legs{
     position: absolute;
     left: 112px;
-    top: 46px;
-    width: 13px;
+    top: 65px;
+    width: 13px;    
     height: 40px;
     background-color: #625945;
-    box-shadow: -40px 0 #ad9560, 135px 0 #625945, 95px 0 #ad9560;
+    box-shadow: -40px 0 #ad9560, 160px 0 #625945, 120px 0 #ad9560;
 }
     .bottom-legs:before{
       position: absolute;
@@ -319,7 +335,7 @@ body{
       background-color: #3d3a34;
       border-top-left-radius: 26px;
       border-top-right-radius: 26px;
-      box-shadow: -40px 0 #928156, 135px 0 #3d3a34, 95px 0 #928156;
+      box-shadow: -40px 0 #928156, 160px 0 #3d3a34, 120px 0 #928156;
     }    
 
   .shadow{
@@ -384,8 +400,17 @@ body{
 .ground {
     width: 100vw;
     height: 400px;
-    background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+    background: linear-gradient(90deg, var(--cielo), var(--cielo2));
     z-index:-4;
     position: absolute;
     margin-top: -58px;
+  }
+
+  .ground2 {
+    width: 100vw;
+    height: 60vh;
+    background: linear-gradient(90deg, var(--marron), var(--marron2));
+    z-index:1;
+    position: absolute;
+    margin-top: 45vh;
   }
